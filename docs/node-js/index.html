@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+  <title>Node.js</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    p {
+      color: #adbac7;
+    }
+
+    code {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-left: 6px;
+      padding-right: 6px;
+
+      font-family: 'Ubuntu Mono', monospace;
+      font-weight: 400;
+      font-style: normal;
+      color: #CC7730;
+
+      border-radius: 4px;
+
+      background-color: #222222;
+    }
+
+    .page-body {
+      margin: 0;
+
+      display: grid;
+      grid-template-rows: min-content 1fr min-content;
+      grid-template-columns: 1fr;
+
+      background-color: #2b2b2b;
+
+      font-family: Roboto, sans-serif;
+    }
+
+    .container {
+      margin: 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      max-width: 1200px;
+    }
+
+    .header-title {
+      grid-row: 1 / 2;
+      color: #A5C261;
+
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+    }
+
+    .page-main {
+      grid-row: 2 / 3;
+      width: 100%;
+    }
+
+    .page-footer {
+      grid-row: 3 / 4;
+    }
+
+    .footer-caption {
+      text-align: center;
+      color: #adbac7;
+
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+  </style>  
+</head>
+
+<body class="page-body">
+  <header>
+    <div class="container">
+      <p class="header-title">Linux notes</>
+    </div>
+  </header> 
+
+
+
+  <main class="page-main container"> 
+    <h1>Установка и удаление</h1>
+<h4>Для проверки версии node.js и npm введите соответственно</h4>
+<p><code>node -v</code></p>
+<p><code>npm -v</code></p>
+<h3>Для того чтобы проверить установлена ли node.js введите</h3>
+<p><code>dpkg --get-selections | grep node</code></p>
+<h3>Для того чтобы удалить node.js введите</h3>
+<p><code>sudo apt purge nodejs</code></p>
+<h2>Установка Node.js в Node Version Manager (nvm)</h2>
+<p><code> sudo apt install build-essential checkinstall</code></p>
+<p>Также нам понадобится libssl:</p>
+<p><code>sudo apt install libssl-dev</code></p>
+<p>Скачать и установить менеджер версий NVM можно с помощью следующей команды:</p>
+<p><code>wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash</code></p>
+<p>После завершения установки вам понадобится перезапустить терминал. Или можно выполнить:</p>
+<p><code>source /etc/profile</code></p>
+<p>Затем смотрим список доступных версий Node js:</p>
+<p><code>nvm ls-remote</code></p>
+<p>Дальше можно устанавливать Node js в Ubuntu, при установке обязательно указывать версию</p>
+<p><code>nvm install 14.0</code></p>
+<p>Список установленных версий вы можете посмотреть выполнив:</p>
+<p><code>nvm list</code></p>
+<p>Дальше необходимо указать менеджеру какую версию нужно использовать:</p>
+<p><code>nvm use 14.0</code></p>
+<p>Чтобы удалить эту версию node js, ее нужно деактивировать:</p>
+<p><code>nvm deactivate 14.0</code></p>
+<p>Затем можно удалить:</p>
+<p><code>nvm uninstall 14.0</code></p>
+<h2>Установка Node.js из репозиториев Ubuntu</h2>
+<p>Для обновления репозитория введите команду:</p>
+<p><code>curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -</code></p>
+<h3>Установка node.js</h3>
+<p><code>sudo apt install nodejs</code></p>
+<h3>Установка npm</h3>
+<p><code>sudo apt-get install nodejs</code></p>
+<h2>BIN</h2>
+<p><code>wget https://nodejs.org/dist/v13.14.0/node-v13.14.0-linux-x64.tar.xz</code></p>
+<p><code>tar xJf node-v13.14.0-linux-x64.tar.xz --strip 1</code></p>
+<p><code>rm node-v13.14.0-linux-x64.tar.xz</code></p>
+
+  </main> 
+
+  <footer class="page-footer">
+    <p class="footer-caption">vulong-development documentation</p>
+  </footer>
+</body>
+</html>
